@@ -4,7 +4,7 @@ function dicofy(el, url){
   for(let i=0;i<text.length;i++){
     let a = document.createElement('a');
     a.setAttribute('href',url.replace('?',text[i].replace(/[\s.,?!]/gi,'').replace(/<ruby>(?:(?!<\/ruby>).)*<rt>((?:(?!<\/ruby>).)*)<\/rt><\/ruby>/gi,'$1')));
-    a.setHTML(text[i]);
+    a.innerHTML=text[i];
     el.appendChild(a);
     el.append(' ');
   }
