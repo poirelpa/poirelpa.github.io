@@ -43,7 +43,7 @@ var injectScript = (src) => {
   if (typeof dicofy === 'undefined') {
     await injectScript('https://poirelpa.github.io/anki/dicofy.js');
   }
-  dicofy(document.getElementById('verso'), 'https://de.wiktionary.org/wiki/?');
+  dicofy(document.getElementById('verso'), 'https://de.wiktionary.org/wiki/%s');
   if (typeof rubify === 'undefined') {
     await injectScript('https://poirelpa.github.io/anki/rubify.js');
   }
