@@ -29,6 +29,10 @@ function betterCompare(){
 			answerSpan.classList.remove('typeMissing');
 			answerSpan.classList.add('typeGood');
 		}
+		if(entrySpan.classList.contains('typeMissing') && answer.length == 1){
+		    let code = answer.charCodeAt(0).toString(16).toUpperCase();
+			document.querySelector('span#typearrow').innerText += "-"+code+"-";
+		}
 		// ignore arabic heh vs teh marbuta
 		if(entrySpan.classList.contains('typeBad') && answer=='ة' && entry=='ه'){
 			entrySpan.classList.remove('typeBad');
