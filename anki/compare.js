@@ -31,7 +31,7 @@ function betterCompare(){
 		}
 		if(entrySpan.classList.contains('typeMissing')){
 		    let code = answer.charCodeAt(0).toString(16).toUpperCase();
-			document.querySelector('span#typearrow').innerText += "-"+code+"-";
+			document.querySelector('span#typearrow').innerText = code;
 		}
 		// ignore arabic heh vs teh marbuta
 		if(entrySpan.classList.contains('typeBad') && answer=='ة' && entry=='ه'){
