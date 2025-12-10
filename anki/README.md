@@ -5,6 +5,9 @@ Transforms chinese Pinyin + Hanzi into ruby, with colored tones
 # dicofy.js
 adds links to a dictionary
 
+# compare.js
+transforms the comparison for typed answers to ignore case, and ignore problems with stt arabic (ignore missing diacritics)
+
 # example
 dynamic loading : https://www.reddit.com/r/Anki/comments/e005jx/comment/f8bwh8i/?utm_source=share&utm_medium=web2x
 ```html
@@ -27,6 +30,18 @@ a {
 .ton5{color:gray}
 </style>
 
+
+<style>
+	.typeGood {background-color:green}
+	.typeBad {background-color:red}
+	.typeMissed {background-color:gray}
+</style>
+<code id="typeans">
+	<span class="typeBad">n</span><span class="typeGood">a</span><span class="typeMissed">---------</span><span class="typeGood">م</span><span class="typeMissed">-</span><span class="typeGood">ل</span><span class="typeMissed">-</span><span class="typeGood">ك</span><span class="typeBad">ه</span>
+	<br><span id="typearrow">↓</span><br>
+	<span class="typeBad">N</span><span class="typeGood">a</span><span class="typeMissed"> esquerda</span><span class="typeGood">م</span><span class="typeMissed"> َ</span><span class="typeGood">ل</span><span class="typeMissed"> ِ</span><span class="typeGood">ك</span><span class="typeBad">ة</span>
+</code>
+
 <script>
 var injectScript = (src) => {
   return new Promise((resolve, reject) => {
@@ -48,6 +63,10 @@ var injectScript = (src) => {
     await injectScript('https://poirelpa.github.io/anki/rubify.js');
   }
   rubify(document.getElementById('pinyin'), document.getElementById('hanzi'));
+  if (typeof betterCompare === 'undefined') {
+    await injectScript('https://poirelpa.github.io/anki/compare.js');
+  }
+  betterCompare();
 })();
 </script>
 ```
