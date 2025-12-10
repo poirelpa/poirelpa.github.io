@@ -29,7 +29,7 @@ function betterCompare(){
 			answerSpan.classList.remove('typeMissing');
 			answerSpan.classList.add('typeGood');
 		}
-		if(entrySpan.classList.contains('typeMissing') && answer.length == 1){
+		if(entrySpan.classList.contains('typeMissing')){
 		    let code = answer.charCodeAt(0).toString(16).toUpperCase();
 			document.querySelector('span#typearrow').innerText += "-"+code+"-";
 		}
