@@ -22,7 +22,7 @@ function betterCompare(){
 		}
 		
 		// ignore missing diacritics
-		if(entrySpan.classList.contains('typeMissed') && answer.match(/^[\u00A0 \u064B-\u065F]+$/)){
+		if(entrySpan.classList.contains('typeMissed') && answer.match(/^[\u00A0 \u064B-\u065F\u0670\u0674]+$/)){
 			entrySpan.classList.remove('typeMissed');
 			entrySpan.classList.add('typeGood');
 			answerSpan.classList.remove('typeMissed');
