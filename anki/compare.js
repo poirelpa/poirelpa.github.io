@@ -23,13 +23,13 @@ function betterCompare(){
 		
 		console.log(answer, answer.match(/^[\u064B-\u065F]+$/));
 		// ignore missing diacritics
-		if(entrySpan.classList.contains('typeMissing') && answer.match(/^[\u064B-\u065F]+$/)){
+		if(entrySpan.classList.contains('typeMissed') && answer.match(/^[\u064B-\u065F]+$/)){
 			entrySpan.classList.remove('typeMissing');
 			entrySpan.classList.add('typeGood');
 			answerSpan.classList.remove('typeMissing');
 			answerSpan.classList.add('typeGood');
 		}
-		if(entrySpan.classList.contains('typeMissing')){
+		if(entrySpan.classList.contains('typeMissed')){
 		    let code = answer.charCodeAt(0).toString(16).toUpperCase();
 			document.querySelector('span#typearrow').innerText = code;
 		}
