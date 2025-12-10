@@ -21,16 +21,16 @@ function betterCompare(){
 			answerSpan.classList.add('typeGood');
 		}
 		
-		console.log(answer, answer.match(/^[\u064B-\u065F]+$/));
+		console.log(answer, answer.match(/^ [\u064B-\u065F]+$/));
 		// ignore missing diacritics
-		if(entrySpan.classList.contains('typeMissed') && answer.match(/^[\u064B-\u065F]+$/)){
+		if(entrySpan.classList.contains('typeMissed') && answer.match(/^ [\u064B-\u065F]+$/)){
 			entrySpan.classList.remove('typeMissed');
 			entrySpan.classList.add('typeGood');
 			answerSpan.classList.remove('typeMissed');
 			answerSpan.classList.add('typeGood');
 		}
 		if(entrySpan.classList.contains('typeMissed')){
-		    let code = answer.charCodeAt(0).toString(16).toUpperCase();
+		    let code = answer.charCodeAt(1).toString(16).toUpperCase();
 			document.querySelector('span#typearrow').innerText = code;
 		}
 		// ignore arabic heh vs teh marbuta
