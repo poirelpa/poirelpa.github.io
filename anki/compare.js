@@ -21,15 +21,15 @@ function betterCompare(){
 			answerSpan.classList.add('typeGood');
 		}
 		
-		console.log(answer, answer.match(/^[\u00A0\u064B-\u065F]+$/));
 		// ignore missing diacritics
-		if(entrySpan.classList.contains('typeMissed') && answer.match(/^[\u00A0\u064B-\u065F]+$/)){
+		if(entrySpan.classList.contains('typeMissed') && answer.match(/^[\u00A0 \u064B-\u065F]+$/)){
 			entrySpan.classList.remove('typeMissed');
 			entrySpan.classList.add('typeGood');
 			answerSpan.classList.remove('typeMissed');
 			answerSpan.classList.add('typeGood');
 		}
 		if(entrySpan.classList.contains('typeMissed')){
+			console.log(answer);
 		    let code = answer.charCodeAt(0).toString(16).toUpperCase();
 			document.querySelector('span#typearrow').innerText = code;
 			
