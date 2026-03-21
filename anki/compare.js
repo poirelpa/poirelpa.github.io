@@ -41,7 +41,8 @@ function betterCompare(){
 		if(entrySpan.classList.contains('typeBad') && answer=='ة' && entry=='ه'){
 			entrySpan.classList.remove('typeBad');
 			entrySpan.classList.add('typeGood');
-			answerSpan.classList.remove('typeBad');
+		 answerSpan.classList.remove('typeBad');
+answerSpan.classList.remove('typeMissing');
 			answerSpan.classList.add('typeGood');
 		}
 	});
