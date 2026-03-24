@@ -18,6 +18,7 @@ function betterCompare(){
 			entrySpan.classList.remove('typeBad');
 			entrySpan.classList.add('typeGood');
 			answerSpan.classList.remove('typeBad');
+			answerSpan.classList.remove('typeMissed');
 			answerSpan.classList.add('typeGood');
 		}
 		
